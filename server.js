@@ -6,7 +6,7 @@ const messageRouter = require('./routes/messages.router')
 
 const app = express()
 
-const PORT = 3000
+const port = process.env.PORT || 3001;
 
 // MIDDLEWARE
 app.use((req, res, next) => {
@@ -22,4 +22,4 @@ app.use('/friends', friendRouter) // mouting router middleware at /friends path
 app.use('/messages', messageRouter) // mouting router middleware at /messages path
 
 // https://expressjs.com/es/4x/api.html#app.listen
-app.listen(PORT, () => console.log(`Listen on port ${PORT}`))
+app.listen(port, () => console.log(`Listen on port ${PORT}`))
